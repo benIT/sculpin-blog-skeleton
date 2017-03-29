@@ -3,6 +3,12 @@ layout: default
 title: About
 
 ---
-# About the Author or Blog
+# About this site
 
-Here is a little information about the author or the blog.
+You will find on this site technical stuffs around open-source and web technologies. I hope this can help. 
+
+This site is powered by [Sculpin](https://sculpin.io/).
+
+Greetings 
+
+Ben  
