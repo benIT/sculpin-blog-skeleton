@@ -1,13 +1,24 @@
 #!/bin/bash
+SCULPIN_REPO_PATH=/vagrant/shared/github-blog
+GITHUB_PAGE_REPO_PATH=/vagrant/shared/benit.github.io
 
-# Replace "sculpin generate" with "php sculpin.phar generate" if sculpin.phar
-# was downloaded and placed in this directory instead of sculpin having been
-# installed globally.
+#check commit message
+if [ $# -ne 1 ]; then
+    echo "commit message required"
+    exit 1;
+fi
 
-sculpin generate --env=prod
-if [ $? -ne 0 ]; then echo "Could not generate the site"; exit 1; fi
+#generate html for github pages
+cd $SCULPIN_REPO_PATH
+vendor/bin/sculpin generate --env=prod
 
-# Add --delete right before "output_prod" to have rsync remove files that are
-# deleted locally from the destination too. See README.md for an example.
-rsync -avze 'ssh -p 4668' output_prod/ username@yoursculpinsite:public_html
-if [ $? -ne 0 ]; then echo "Could not publish the site"; exit 1; fi
+#synchronize with repo that host github pages on master branch
+rsync -a --exclude .git $SCULPIN_REPO_PATH/output_prod/ $GITHUB_PAGE_REPO_PATH --delete
+
+read -p "Content generated and sync. Do you want to commit and push to tour github pages with commit message : $1" -n 1 -r
+
+#commit to repo that host github pages on master branch
+cd $GITHUB_PAGE_REPO_PATH
+git add -A
+git commit -m "$1"
+git push origin master
