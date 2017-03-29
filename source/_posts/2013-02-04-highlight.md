@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Syntax Highlighting
 categories:
     - features
