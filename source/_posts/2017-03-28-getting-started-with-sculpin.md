@@ -36,6 +36,24 @@ As this site, it can be hosted on GITHUB pages.
 
          
 ##Deploy on github         
-         
-     
+
+###About github pages
+
+You can host html generaed  at 3 different locations :
+ - on `master` branch 
+ - or `master` branch in `docs` folder
+ - on `gh-pages` branch
  
+ **But for your personal pages, you can only host in repo named `benit.github.io` on the `master` branch. 
+ This means, that we need 2 repos : one for source control and another one for hosting our github pages.**
+ Thus, I create the following repos : `github-blog.git` and `benit.github.io`
+ 
+###How to publish the content to the repo that hosts your github pages ?
+ 
+ I edit [the shell script named `publish.sh`](https://github.com/benIT/github-blog/blob/master/publish.sh).
+ The script is in charge of:
+ 
+ - generating the html
+ - rsyncing the `output_prod` folder with the `benit.github.io`. 
+ - commiting 
+ - pushing
