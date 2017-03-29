@@ -40,6 +40,7 @@ As this site, it can be hosted on GITHUB pages.
 ###About github pages
 
 You can host html generaed  at 3 different locations :
+
  - on `master` branch 
  - or `master` branch in `docs` folder
  - on `gh-pages` branch
