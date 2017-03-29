@@ -14,8 +14,13 @@ vendor/bin/sculpin generate --env=prod
 
 #synchronize with repo that host github pages on master branch
 rsync -a --exclude .git $SCULPIN_REPO_PATH/output_prod/ $GITHUB_PAGE_REPO_PATH --delete
+read -p "Content generated and sync. Do you want to both commit and push to blog repo and github pages repo with commit message : $1" -n 1 -r
 
-read -p "Content generated and sync. Do you want to commit and push to tour github pages with commit message : $1" -n 1 -r
+#commit to the repo that version our blog source code
+git add -A
+git commit -m "$1"
+git push origin master
+
 
 #commit to repo that host github pages on master branch
 cd $GITHUB_PAGE_REPO_PATH
