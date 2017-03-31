@@ -7,11 +7,11 @@ tags:
     
 
 ---
-In this post, I list the components of my stack environment.
+In this post, I list the components of my dev environment.
 
 ##Make use of a cool virtualisation solution
-I choose Vagrant. Take the time to create cool provisioning scripts. In case of problem, you will be able to set up quickly your env!
-VERSION your provisioning script
+I choose [Vagrant](https://www.vagrantup.com/). Take the time to create cool provisioning scripts. In case of problem, you will be able to set up quickly your env!
+**VERSION your provisioning scripts!**
 
 ##Reproduce the exact same stack than the prod env 
  - OS
@@ -34,7 +34,8 @@ In php.ini files:
 I use gitlab: git+wiki+tracker
 
 ##Make use of a cool PHP IDE
-I make use PHPSTORM because of:
+I make use [PHPSTORM](https://www.jetbrains.com/phpstorm/) because of:
+
  - debugger integration
  - completion
  - external tools integration
@@ -44,6 +45,7 @@ I make use PHPSTORM because of:
  - source control integration
 
 ##Set up a cool debugger
+
 I use XDEBUG embed in vagrant VM with PHPSTORM on host machine which is very very very nice.
 
  - [ressource to set up vagrant with phpstorm](https://confluence.jetbrains.com/display/PhpStorm/Working+with+Advanced+Vagrant+features+in+PhpStorm)
