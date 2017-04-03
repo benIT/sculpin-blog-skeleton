@@ -39,7 +39,7 @@ As this site, it can be hosted on GITHUB pages.
 
 ###About github pages
 
-You can host html generaed  at 3 different locations :
+You can host html generated  at 3 different locations :
 
  - on `master` branch 
  - or `master` branch in `docs` folder
@@ -55,6 +55,10 @@ You can host html generaed  at 3 different locations :
  The script is in charge of:
  
  - generating the html
- - rsyncing the `output_prod` folder with the `benit.github.io`. 
- - commiting 
- - pushing
+ - rsyncing the `output_prod` folder of the source control repo with the `benit.github.io`repo. 
+ - commiting on the 2 repos with the same commit message
+ - pushing on the 2 repo
+ 
+Usage:
+
+    ./publish.sh "edit post about Setting up a cool php development environment"
