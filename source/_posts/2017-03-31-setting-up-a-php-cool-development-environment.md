@@ -94,6 +94,8 @@ I use [Phing](https://www.phing.info/) to build and deploy.
     chmod +x /usr/local/lib/phing.phar
     sudo ln -s /usr/local/lib/phing.phar /usr/local/bin/phing
     
+    pear install VersionControl_Git-alpha
+    
 
 ## Things that must be under source control
 
