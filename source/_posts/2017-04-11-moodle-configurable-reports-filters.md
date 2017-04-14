@@ -28,6 +28,37 @@ In the `filters` tab:
  
  - add `Search text` that will refer to `%%FILTER_SEARCHTEXT:prefix_course.fullname:~%%`
 
+###Available variables
+
+    %%CATEGORYID%%
+    %%COURSEID%%
+    %%CURRENTUSER%%
+    %%DEBUG%%
+    %%FILTER_VAR%%
+    %%STARTTIME%%’,’%%ENDTIME%%
+    %%USERID%%
+    %%WWWROOT%%
+
+###Available filters
+
+    %%FILTER_CATEGORIES:
+    %%FILTER_COURSEMODULEID:
+    %%FILTER_COURSEMODULEFIELDS:
+    %%FILTER_COURSEMODULE:
+    %%FILTER_COURSES:
+    %%FILTER_COURSEENROLLEDSTUDENTS:
+    %%FILTER_USERS:
+    %%FILTER_ROLE:
+    %%FILTER_SEARCHTEXT:
+    %%FILTER_SEMESTER:
+    %%FILTER_STARTTIME:
+    %%FILTER_ENDTIME:
+    %%FILTER_SUBCATEGORIES:
+    %%FILTER_COURSEUSER:
+    %%FILTER_SYSTEMUSER:
+    %%FILTER_YEARHEBREW:
+    %%FILTER_YEARNUMERIC:
+
 ##Result
 
 In the `view report` tab, you will get the 2 filters!
