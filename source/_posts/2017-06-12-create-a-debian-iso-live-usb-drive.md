@@ -57,3 +57,9 @@ And upgrade packages:
 Let's check everything is ok by installing a common packages:
 
 	apt-get install -y vim git
+	
+##sudoerfile 
+Add the existing 'ben' user to the 'sudo' group:
+
+	su
+	adduser ben sudo
