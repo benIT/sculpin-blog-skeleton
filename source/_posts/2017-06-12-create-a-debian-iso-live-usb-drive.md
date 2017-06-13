@@ -16,13 +16,14 @@ tags:
 
 - install gparted: `sudo apt-get install gparted`
 - identify your usb drive with: `fdisk -l`
-- format it as `ntfs`(so the drive can be used with windows too)
-- flag it as 'boot'
+- format it as `ntfs`(so the drive can be used with windows too) or for linux exclusive usage as `ext4`
+- flag it as `boot`
 - unmount the key
+- [here is a great resource](http://elinux.org/RPi_Adding_USB_Drives) about partition and flashdrive
 
 ##Burn it to a usb flash drive
 
-Copy iso file to key using `dd`
+Copy iso file to key using `dd` (~5 minutes ): 
 
     sudo dd bs=4M if=debian-live-8.8.0-amd64-gnome-desktop.iso of=/dev/sdb
 
@@ -31,6 +32,8 @@ Copy iso file to key using `dd`
 - install debian
 
 ##Set up sources.list
+**The following rows does not deal with a debian flash live install but are important when you install debian whithout internet.**
+
 
 After install from live usb whitout internet, edit as follow `/etc/apt/sources.list`
 	# deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20170506-15:01]/ jessie main
@@ -59,7 +62,7 @@ Let's check everything is ok by installing a common packages:
 	apt-get install -y vim git
 	
 ##sudoerfile 
-Add the existing 'ben' user to the 'sudo' group:
+Add the existing `ben` user to the `sudo` group:
 
 	su
 	adduser ben sudo
