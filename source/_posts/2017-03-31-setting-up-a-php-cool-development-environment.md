@@ -57,22 +57,8 @@ I use [PHPSTORM](https://www.jetbrains.com/phpstorm/) because of:
 
 I use XDEBUG embed in vagrant VM with PHPSTORM on host machine which is very very very nice.
 
- - [ressource to set up vagrant with phpstorm](https://confluence.jetbrains.com/display/PhpStorm/Working+with+Advanced+Vagrant+features+in+PhpStorm)
- 
- - [bookmarle generator](https://www.jetbrains.com/phpstorm/marklets/)
+[Look at this article](/blog/2017/06/15/setup-xdebug-phpstorm-vagrant) to setup xdebug/vagrant/phpstorm.
 
-On the guest machine :
-
-        sudo apt-get install -y php-pear php5-dev
-        sudo pecl install xdebug
-
-php.ini file: 
-
-        [xdebug]
-        zend_extension=/usr/lib/php5/20131226/xdebug.so
-        xdebug.remote_enable=1
-        xdebug.remote_host=10.0.2.2
-        xdebug.remote_port=9000
 
 
 ##Set up a mailer
