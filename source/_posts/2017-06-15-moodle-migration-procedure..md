@@ -21,8 +21,8 @@ In this post is described how to export you moodle app and import it on another 
 ##Let's tar db and filesystem
 
         tar -cvzf moodle-to-import.tgz database-to-import.sql moodle moodledata/
-         exit
-         mv ~/vagrant/vagrant-moodle/shared/moodle-to-import.tgz ~/vagrant/vagrant-moodle-deploy/shared/
+        exit
+        mv ~/vagrant/vagrant-moodle/shared/moodle-to-import.tgz ~/vagrant/vagrant-moodle-deploy/shared/
 
 ##Cleanup the target machine
 Connect on the target machine. here target database is also named 'moodle':
