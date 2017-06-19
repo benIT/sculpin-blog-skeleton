@@ -8,15 +8,16 @@ tags:
     - raspberry
 
 ---
-
+This post describes how to connect a RPI to a linux station with a simple ethernet cable.
+ 
 ##On debian host machine
 
 - run `gnome-nettool`, change the edit the wired connection and edit IPv4 settings.
     - Change the `DHCP` default method 
-        ![network conf](/images/wiredDHCP.png)
+        ![network conf](/images/rpi/ethernet-connection/wired-dhcp.png)
         
-        to 'shared with other computer':
-        ![network conf](/images/wiredShared.png)
+        to `shared with other computer`:
+        ![network conf](/images/rpi/ethernet-connection/wired-shared.png)
 - power off the RPI
 
         sudo halt
@@ -77,5 +78,3 @@ That was it! You are now connected over SSH on the RPI:
     SSH is enabled and the default password for the 'pi' user has not been changed.
     This is a security risk - please login as the 'pi' user and type 'passwd' to set a new password.
     pi@raspberrypi:~ $
-
-##Consuming nextcloud
