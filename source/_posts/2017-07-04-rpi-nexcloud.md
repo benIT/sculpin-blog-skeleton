@@ -1,5 +1,5 @@
 ---
-title: Installing nextcloud on RPI device
+title: Installing Nextcloud on RPI device
 categories:
     - RPI
 tags:
@@ -15,7 +15,8 @@ tags:
 
 ###Basic configuration
 - enable SSH: `sudo raspi-config` > `Interfacing Options` > `SSH`
-- change default password
+- change default password running : `passwd`
+- change keyboard layout if needed
 
 ##Install Nextcloud
 
@@ -28,7 +29,7 @@ The following script will install the full stack. Run it as follow:
 
 Provisioning script from github:
         
-<script src="https://gist.github.com/benIT/2828f3ffcf0cca7953489e2d35d1d010.js"></script>
+<script src="https://gist.github.com/benIT/1545b4ccf883d41be9b0cdd97e043c2f.js"></script>
 
 ###Tuning
 
