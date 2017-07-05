@@ -78,3 +78,4 @@ Edit `trusted_domains` settings in `/var/www/nextcloud/config` if needed.
 ##Enjoy
 
 That was it! Nextcloud if now fully configured on your RPI, enjoy!
+
