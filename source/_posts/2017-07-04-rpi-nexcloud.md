@@ -36,6 +36,7 @@ Provisioning script from github:
 Check settings here `https://nextcloud.local/index.php/settings/admin/`:
 
 ####Enable PHP7.0 opcache
+
 Add this in `/etc/php/7.0/apache2/php.ini`: 
 
         opcache.enable=1
@@ -72,4 +73,8 @@ Edit  `/etc/fstab`:
 
 ##Nextcloud trusted domains
 
-Edit `trusted_domains` settings in `/var/www/nextcloud/config` if needed
+Edit `trusted_domains` settings in `/var/www/nextcloud/config` if needed.
+
+##Enjoy
+
+That was it! Nextcloud if now fully configured on your RPI, enjoy!
