@@ -3,7 +3,8 @@ title: First steps with Veracrypt
 categories:
     - veracrypt
 tags:
-    - phpstorm
+    - privacy
+    - security
 
 ---
 ##Why Vercrypt?
