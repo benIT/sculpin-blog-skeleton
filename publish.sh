@@ -8,6 +8,13 @@ if [ $# -ne 1 ]; then
     exit 1;
 fi
 
+eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa_github
+if [ $? -ne 0 ]; then
+    echo "ssh error"
+    exit 1;
+fi
+
+
 #generate html for github pages
 cd $SCULPIN_REPO_PATH
 vendor/bin/sculpin generate --env=prod
