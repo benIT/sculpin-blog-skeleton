@@ -1,5 +1,5 @@
 ---
-title: Open source software list
+title: Cool open source software for home
 categories:
     - open source
 tags:
@@ -25,7 +25,7 @@ After testing several linux (fedora, opensuse, debian, ubuntu ...), I think the 
 - [veracrypt](https://www.veracrypt.fr/en/Home.html): awesome. No more USB key or sensitive data without that 
 - [keepass](http://keepass.info/): cannot live without that
 
-##Internet
+##Web browser
 
 - [firefox](https://www.mozilla.org/fr/firefox): a must have
 - [chromium](https://www.chromium.org/Home): powerfull
