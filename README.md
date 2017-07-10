@@ -25,6 +25,6 @@ And a publish script that will rsync and commit on both repos: `publish.sh`
     
     cd github-blog/ && php vendor/bin/sculpin generate --watch --server
         
-###Publish    
+### Publish    
 
     ./publish.sh "your commit message"
