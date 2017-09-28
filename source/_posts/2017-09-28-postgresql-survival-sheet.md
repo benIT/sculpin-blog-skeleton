@@ -78,6 +78,14 @@ output:
 
     DROP ROLE
 
+## Create user
+
+    postgres=# CREATE USER videoapp WITH PASSWORD 'videoapp' CREATEDB ;
+    
+output: 
+    
+    CREATE ROLE
+
 
 ## List DB tables
 
