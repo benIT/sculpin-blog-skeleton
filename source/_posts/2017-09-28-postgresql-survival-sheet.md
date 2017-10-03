@@ -110,3 +110,25 @@ output:
      public | video       | table | videoapp | 8192 bytes | 
      public | videos_tags | table | videoapp | 0 bytes    | 
     (4 rows)
+## Config files
+
+## Determine which config file is in use
+
+    SHOW config_file ;
+
+## Determine which hba file is in use
+
+    SHOW hba_file;
+    
+## Connection
+    
+### Remote connection
+
+In `postgresql.conf`:
+
+    listen_addresses = '*'
+    
+        
+In `pg_hba.conf`:
+
+    host  all  all 0.0.0.0/0 md5
