@@ -94,6 +94,10 @@ Let's write a simple script to key/value access:
         $mem->set("blah", "I am data!  I am held in memcached!") or die("Couldn't save anything to memcached...");
     }   
     
+### Dumping all key/value records
+
+<script src="https://gist.github.com/benIT/2e63d3541f4f46d9a47777d467549d2e.js"></script>    
+    
     
 ## Sources
  
