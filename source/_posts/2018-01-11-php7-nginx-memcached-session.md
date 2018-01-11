@@ -9,6 +9,8 @@ tags:
 
 ## Memcached server side
 
+This server has private @IP : 192.168.33.14
+
 ### Install memcached:
     
     sudo apt-get install memcached
@@ -27,6 +29,8 @@ In `/etc/memcached.conf`, set up listening private @IP of the server:
 
     
 ## Web server side
+
+This server has private @IP : 192.168.33.11
 
 
 ### Install PHP extension
@@ -82,6 +86,7 @@ Let's write a simple script to key/value access:
 
     $mem = new Memcached();
     $mem->addServer("192.168.33.14", 11211);
+    $result = $mem->get("blah");
     if ($result) {
         echo $result;
     } else {
@@ -90,7 +95,7 @@ Let's write a simple script to key/value access:
     }   
     
     
- ## Sources
+## Sources
  
  * https://www.digitalocean.com/community/tutorials/how-to-share-php-sessions-on-multiple-memcached-servers-on-ubuntu-14-04
  * http://www.servermom.org/install-use-memcached-nginx-php-7-ubuntu-16-04/3670/
