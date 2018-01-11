@@ -13,19 +13,17 @@ In this post, the most common Nginx commands that I use are listed. This is not 
 
     sudo apt-get install -y nginx
     
-    sudo apt-get install -y php7.0-fpm php7.0-gd php7.0-mysql php7.0-cli php7.0-common php7.0-curl php7.0-opcache php7.0-json php7.0-imap php7.0-mbstring php7.0-xml php7-pgsql
+    sudo apt-get install -y php7.0-fpm php7.0-gd php7.0-mysql php7.0-cli php7.0-common php7.0-curl php7.0-opcache php7.0-json php7.0-imap php7.0-mbstring php7.0-xml php7-pgsql php7.0-sqlite
     
     sudo apt-get install -y postgresql
 
     
-    ###############################################################
-    #nodeJS
-    ###############################################################
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    sudo npm install gulp jshint gulp-jshint bower grunt -g
-    ###############################################################
+## Vagrant tips for dev env
 
-    sudo apt-get install postgresql -y
+In the following files change `www-data` to `vagrant`:
+* /etc/php/7.0/fpm/php-fpm.conf
+* /etc/php/7.0/fpm/pool.d/www.conf
 
-cache + history + ssh
+## Restart services
+
+    sudo service nginx restart && sudo service php7.0-fpm restart
