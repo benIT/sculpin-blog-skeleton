@@ -88,3 +88,9 @@ Let's write a simple script to key/value access:
         echo "No matching key found yet. Let's start adding that now!";
         $mem->set("blah", "I am data!  I am held in memcached!") or die("Couldn't save anything to memcached...");
     }   
+    
+    
+ ## Sources
+ 
+ * https://www.digitalocean.com/community/tutorials/how-to-share-php-sessions-on-multiple-memcached-servers-on-ubuntu-14-04
+ * http://www.servermom.org/install-use-memcached-nginx-php-7-ubuntu-16-04/3670/
