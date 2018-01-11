@@ -7,7 +7,7 @@ tags:
 
 ---
 
-This procedure has been tested on Moodle [version 3.0.6+](https://github.com/moodle/moodle/commit/7223cd2518ad3b37901b736d6b62e7badd4ecaa1) with a dedicated memcached server which @IP:port is 192.168.33.14:11211 
+This procedure has been tested on Moodle [version 3.0.6+](https://github.com/moodle/moodle/commit/7223cd2518ad3b37901b736d6b62e7badd4ecaa1) with a dedicated memcached server which @IP:port is 192.168.33.14:11211.
 
 ## Set up a  memcached server
 
