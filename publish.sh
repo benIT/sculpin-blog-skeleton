@@ -1,6 +1,6 @@
 #!/bin/bash
-SCULPIN_REPO_PATH=/vagrant/shared/github-blog
-GITHUB_PAGE_REPO_PATH=/vagrant/shared/benit.github.io
+SCULPIN_REPO_PATH=.
+GITHUB_PAGE_REPO_PATH=../benit.github.io
 
 #check commit message
 if [ $# -ne 1 ]; then
@@ -10,8 +10,8 @@ fi
 
 #generate html for github pages
 cd $SCULPIN_REPO_PATH
-vendor/bin/sculpin generate --env=prod
-
+#vendor/bin/sculpin generate --env=prod
+docker container exec  github-blog sh -c "cd /github-blog/ && composer install && php vendor/bin/sculpin generate --env=prod"
 #synchronize with repo that host github pages on master branch
 rsync -a --exclude .git $SCULPIN_REPO_PATH/output_prod/ $GITHUB_PAGE_REPO_PATH --delete
 read -p "Content generated and sync. Do you want to both commit and push to blog repo and github pages repo with commit message : $1" -n 1 -r

@@ -14,16 +14,43 @@ There as 2 repos:
 - one for hosting sculpin generated html on github pages: `benit.github.io.git`
 
 And a publish script that will rsync and commit on both repos: `publish.sh`
-### Install    
+
+### Install
+
+ssh:
     
     git clone git@github.com:benIT/github-blog.git
+    git clone https://github.com/benIT/github-blog.git
+
+https:
+    
     git clone git@github.com:benIT/benit.github.io.git
+    git clone https://github.com/benIT/benit.github.io.git
+     
     cd github-blog
     composer install
 
 ### Run sculpin's built in webserver     
     
-    cd github-blog/ && php vendor/bin/sculpin generate --watch --server
+    cd github-blog/
+
+#### Watch for changes
+    
+    php vendor/bin/sculpin generate --watch --server
+    
+or:
+
+    docker container exec  github-blog sh -c "cd /github-blog/ && composer install && php vendor/bin/sculpin generate --watch --server"
+
+#### generate prod version
+
+    vendor/bin/sculpin generate --env=prod
+or:
+
+    docker container exec  github-blog sh -c "cd /github-blog/ && composer install && php vendor/bin/sculpin generate --env=prod"
+    
+    
+Checkout the generated website at [http://localhost:8000](http://localhost:8000)
         
 ### Publish    
 
