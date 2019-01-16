@@ -33,14 +33,19 @@ https:
 ### Run sculpin's built in webserver     
     
     cd github-blog/
+    
 
+#### Start docker container
+    
+    docker-compose up -d
+    
 #### Watch for changes
     
     php vendor/bin/sculpin generate --watch --server
     
 or:
 
-    docker container exec  github-blog sh -c "cd /github-blog/ && composer install && php vendor/bin/sculpin generate --watch --server"
+    docker container exec github-blog sh -c "cd /github-blog/ && composer install && php vendor/bin/sculpin generate --watch --server"
 
 #### generate prod version
 
@@ -55,3 +60,7 @@ Checkout the generated website at [http://localhost:8000](http://localhost:8000)
 ### Publish    
 
     ./publish.sh "your commit message"
+
+#### Stop docker container
+
+        docker-compose down -v
