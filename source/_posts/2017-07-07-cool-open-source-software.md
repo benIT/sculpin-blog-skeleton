@@ -40,12 +40,10 @@ After testing several linux (fedora, opensuse, debian, ubuntu ...), I think the 
 
 - [viking](https://sourceforge.net/projects/viking/?SetFreedomCookie): awesome for GPS tracking
 
-
 ##Office 
 
 - [libreoffice](https://fr.libreoffice.org/): for documents, spreadsheets
 - [thunderbird](https://www.mozilla.org/fr/thunderbird/): for mailing and RSS
-
  
 ##Text editor
 
@@ -60,6 +58,10 @@ After testing several linux (fedora, opensuse, debian, ubuntu ...), I think the 
 ##Multimedia
 
 - [vlc](https://www.videolan.org/vlc/index.fr.html): this stuff reads and streams everything
+- [audio-recorder](https://doc.ubuntu-fr.org/audio-recorder#installation): capture audio stream fpr your pc
+- [kazam](https://doc.ubuntu-fr.org/kazam): cool screencasting
+- [shutter](https://www.cyberciti.biz/open-source/linux-screenshot-program-tool/): cool screenshoting
+- [ffmpeg](https://www.ffmpeg.org/): converting video and audio has never been so easy. 
 
 ##Website
 
