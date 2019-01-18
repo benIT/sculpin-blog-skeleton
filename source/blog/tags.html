@@ -2,12 +2,14 @@
 layout: default
 title: Tags
 use:
-    - posts_tags
+- posts_tags
 ---
 <h2>Tags</h2>
 
 <div>
-{% for tag,posts in data.posts_tags %}
-<a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
-{% endfor %}
+    <ul>
+        {% for tag,posts in data.posts_tags %}
+        <li><a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
 </div>
