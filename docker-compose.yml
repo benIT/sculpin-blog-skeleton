@@ -4,7 +4,6 @@ services:
     image: benit/debian-web
     container_name: github-blog
     ports:
-      - 80:80
       - 8000:8000
     volumes:
       - ./:/github-blog/
