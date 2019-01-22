@@ -3,7 +3,6 @@ title: Docker 101: docker-compose
 categories:
     - linux
     - docker
-draft: true
 ---
 
 
@@ -29,18 +28,15 @@ The magic happens in a file named `docker-compose.yml`
     
     docker-compose down -v
     
-    
-# Development
-      
-replace this section to get your changes from your host sync with your container : 
-    
-    image: benit/debian-web
+## Networking
 
-by:
+`docker-compose` handles the creation a private network:
 
-    build:
-      context: .
-      args:
-        - http_proxy
-        - https_proxy
-        - no_proxy
+    Creating network "n-tiers_default" with the default driver
+    Creating object-cache ... done
+    Creating pgsql        ... done
+    Creating web          ... done
+     
+# Example
+
+Better than words, take a look at this [repo that illustrates a classical n-tiers web app](https://github.com/benIT/docker-compose-n-tiers)

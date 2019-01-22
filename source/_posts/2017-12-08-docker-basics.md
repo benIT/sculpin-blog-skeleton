@@ -1,7 +1,9 @@
 ---
-title: Docker basics
+title: Docker 101:  basics
 categories:
     - docker
+    - linux
+
 tags:
 
 ---
