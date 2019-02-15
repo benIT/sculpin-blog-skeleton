@@ -5,7 +5,7 @@ categories:
 tags:
 
 ---
-I spent many years to find a full and cool stack of open source software for home. Here is my personal open source software list, that I really enjoy.
+I spent many years to find a full and cool stack of open source softwares for home. Here is my personal open source software list, that I really enjoy.
 
 ##OS
 
@@ -18,6 +18,7 @@ After testing several linux (fedora, opensuse, debian, ubuntu ...), I think the 
 
 - [gparted](http://gparted.org/): partition made easy
 - [clonezilla](http://clonezilla.org/): restore your OS
+- [multibootusb](https://itsfoss.com/multiple-linux-one-usb/): run several live iso on the same usb drive
 
 
 ##Privacy
