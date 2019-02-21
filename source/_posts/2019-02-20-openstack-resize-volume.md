@@ -22,6 +22,13 @@ Check command:
 	
 	sudo -u postgres psql -d webapp -c "SELECT * FROM account" ;
 
+returns:
+
+     user_id | username |     created_on      
+    ---------+----------+---------------------
+           1 | foo      | 2019-01-01 00:00:00
+           2 | bar      | 2019-01-02 00:00:00
+    (2 rows)
 
 ## Switch off automatic volume mount in `/etc/fstab `
 
@@ -67,6 +74,8 @@ identify your target server and target volume with `openstack volume list` and `
 ## Detach volume from server
    
     openstack server remove volume $TARGET_SERVER $TARGET_VOLUME
+    
+*At this point, the device should NOT be visible when you execute: `ls -l /dev/vd*`*.    
 
 ## Increase volume size
    
@@ -75,6 +84,8 @@ identify your target server and target volume with `openstack volume list` and `
 ## Attach volume to server
 
     openstack server add volume $TARGET_SERVER $TARGET_VOLUME --device /dev/vdb
+
+*At this point, the device should BE visible when you execute: `ls -l /dev/vd*`*.    
 
 ## Manage partition on your openstack server
 
