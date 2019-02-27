@@ -8,30 +8,33 @@ tags:
 
 ---
 
-##Download a debian 8 iso
+## Download a debian 8 iso
 
 - Download a debian iso from [debian official site](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/)
 
-##Format your usb key and flag it as bootable
+## Identify USB drive
+
+identify your usb drive with: `fdisk -l` OR with `lsblk`
+
+## Format your usb key and flag it as bootable
 
 - install gparted: `sudo apt-get install gparted`
-- identify your usb drive with: `fdisk -l`
-- format it as `ntfs`(so the drive can be used with windows too) or for linux exclusive usage as `ext4`
+- format it as `fat32`(so the drive can be used with windows too) or for linux exclusive usage as `ext4`
 - flag it as `boot`
 - unmount the key
 - [here is a great resource](http://elinux.org/RPi_Adding_USB_Drives) about partition and flashdrive
 
-##Burn it to a usb flash drive
+## Burn it to a usb flash drive
 
 Copy iso file to key using `dd` (~5 minutes ): 
 
-    sudo dd bs=4M if=debian-live-8.8.0-amd64-gnome-desktop.iso of=/dev/sdb
+    sudo dd bs=4M if=debian-live-8.8.0-amd64-gnome-desktop.iso of=/dev/sdb  && sync 
 
 - eject the key
 - restart PC anc check from BIOS that PC will boot from usb devices at first
 - install debian
 
-##Set up sources.list
+## Set up sources.list
 **The following rows does not deal with a debian flash live install but are important when you install debian whithout internet.**
 
 
@@ -61,7 +64,7 @@ Let's check everything is ok by installing a common packages:
 
 	apt-get install -y vim git
 	
-##sudoerfile 
+## sudoerfile 
 Add the existing `ben` user to the `sudo` group:
 
 	su
