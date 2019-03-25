@@ -97,12 +97,15 @@ output:
 
 ## Let's rebase the `feature` branch on the `master` branch
 
+Let's move on our `feature` branch:
+
 	git checkout feature 
 
 output:
 
 	Switched to branch 'feature'
 
+And now the rebase operation itself:
 
 	git rebase -i master 
 
