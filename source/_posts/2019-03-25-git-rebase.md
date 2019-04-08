@@ -155,3 +155,13 @@ output:
 
 ![screenshot](/images/git-rebase/graph2.png)
 
+## Usage: getting changes from origin/branch on branch
+
+Retrieve changes from origin:
+
+    git fetch
+
+apply commit from that: 
+
+    git checkout master
+    git rebase origin/master
