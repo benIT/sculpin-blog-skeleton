@@ -1,5 +1,5 @@
 ---
-title: Install REDMINE 3.X with PgSQL and Apache2 on debian 9
+title: Install REDMINE 3.4 with PgSQL and Apache2 on debian 9
 categories:
     - redmine
 ---
