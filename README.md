@@ -54,7 +54,8 @@ Checkout the generated website at [http://localhost:8000](http://localhost:8000)
     docker-compose up -d
     docker container exec github-blog sh -c "cd /github-blog/ && composer install && php vendor/bin/sculpin generate --watch --server"
 
-    docker container exec github-blog git status
+     git status
+    ./publish.sh "my message"
 
     
 #### Stop docker container
