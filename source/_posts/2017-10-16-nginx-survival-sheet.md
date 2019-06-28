@@ -2,6 +2,7 @@
 title: Nginx survival sheet
 categories:
     - nginx
+    - survival sheet
 tags:
     
 ---

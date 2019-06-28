@@ -3,7 +3,6 @@ title: Filter functionality in Moodle Configurable Reports
 categories:
     - Moodle
 tags:
-    - Moodle
     
 
 ---

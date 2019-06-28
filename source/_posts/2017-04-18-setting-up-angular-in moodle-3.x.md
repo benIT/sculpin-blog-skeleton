@@ -2,9 +2,9 @@
 title: Setting up angularjs and chartjs in Moodle 3.X
 categories:
     - Moodle
-tags:
-    - Moodle
     - angularjs
+    - js
+tags:
 
 ---
 

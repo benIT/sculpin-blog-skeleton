@@ -1,9 +1,9 @@
 ---
 title: Moodle migration procedure
 categories:
+    - moodle
     - dev
 tags:
-    - moodle
 
 ---
 In this post is described how to export you moodle app and import it on another environment.

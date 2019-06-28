@@ -3,9 +3,8 @@ title: Configure xdebug with phpstorm with a vagrant box
 categories:
     - dev
     - phpstorm
-tags:
     - xdebug
-    - phpstorm
+tags:
 
 ---
 

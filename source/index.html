@@ -13,7 +13,7 @@ use:
             <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
         </header>
         <div>
-            {{ post.blocks.content|raw }}
+            {{ post.blocks.content |raw }}
         </div>
         {% if post.meta.tags %}
             <p class="tags">
@@ -27,7 +27,9 @@ use:
 {% endfor %}
 {% if page.pagination.previous_page or page.pagination.next_page %}
     <nav>
-        {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-        {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
+        <ul class="pager">
+            {% if page.pagination.next_page %}<li class="next"><a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older posts<span aria-hidden="true">&rarr;</span></a></li>{% endif %}
+            {% if page.pagination.previous_page %}<li class="previous"><a href="{{ site.url }}{{ page.pagination.previous_page.url }}"><span aria-hidden="true">&larr;</span> Newer posts</a></li>{% endif %}
+        </ul>
     </nav>
 {% endif %}

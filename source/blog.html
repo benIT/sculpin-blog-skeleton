@@ -23,15 +23,15 @@ use:
     <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
   </div>
 {% endfor %}
-
+<br>
 <div>
 {% if page.pagination.previous_page or page.pagination.next_page %}
     <nav class="article clearfix">
     {% if page.pagination.previous_page %}
-    <a class="previous" href="{{ site.url }}{{ page.pagination.previous_page.url }}" title="Previous Page"><span class="title">Previous Page</span></a>
+    <a class="btn btn-default" href="{{ site.url }}{{ page.pagination.previous_page.url }}" title="Previous Page">Previous Page</a>
     {% endif %}
     {% if page.pagination.next_page %}
-    <a class="next" href="{{ site.url }}{{ page.pagination.next_page.url }}" title="Next Page"><span class="title">Next Page</span></a>
+    <a class="btn btn-default" href="{{ site.url }}{{ page.pagination.next_page.url }}" title="Next Page">Next Page</a>
     {% endif %}
     </nav>
 {% endif %}

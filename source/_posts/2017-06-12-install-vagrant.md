@@ -3,8 +3,8 @@ title: Installing Vagrant
 categories:
     - system
     - linux
-tags:
     - debian
+tags:
 
 ---
 ##Install virtual box

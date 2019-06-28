@@ -2,8 +2,9 @@
 title: Consuming a Moodle webservice 
 categories:
     - Moodle
-tags:
+    - dev
     - webservices
+tags:
     
 
 ---

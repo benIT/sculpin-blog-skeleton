@@ -3,8 +3,9 @@ title: Getting started with npm
 categories:
     - node
     - npm
-tags:
     - dev
+    - js
+tags:
 
 ---
 ##npm global configuration file

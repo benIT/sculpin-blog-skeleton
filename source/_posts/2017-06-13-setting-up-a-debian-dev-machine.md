@@ -3,8 +3,8 @@ title: Setting up a debian dev machine
 categories:
     - system
     - linux
-tags:
     - debian
+tags:
 
 ---
 

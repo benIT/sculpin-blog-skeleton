@@ -2,9 +2,9 @@
 title: First steps with Veracrypt
 categories:
     - veracrypt
-tags:
     - privacy
     - security
+tags:
 
 ---
 ##Why Vercrypt?

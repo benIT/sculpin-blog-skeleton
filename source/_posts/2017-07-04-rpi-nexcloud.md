@@ -2,18 +2,20 @@
 title: Installing Nextcloud on RPI device
 categories:
     - RPI
-tags:
     - privacy
     - security
+tags:
 
 ---
 ##Install Raspbian
 
 ###Install OS
+
 - [download Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
 - [burn it to the RPI SD card](/blog/2017/06/12/create-a-debian-iso-live-usb-drive)
 
 ###Basic configuration
+
 - enable SSH: `sudo raspi-config` > `Interfacing Options` > `SSH`
 - change default password running : `passwd`
 - change keyboard layout if needed

@@ -3,6 +3,7 @@ title: Setting up git with multiple accounts
 categories:
     - system
     - linux
+    - git
 tags:
     - debian
 

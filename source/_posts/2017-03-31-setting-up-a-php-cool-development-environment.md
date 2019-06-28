@@ -2,8 +2,8 @@
 title: Setting up a cool php development environment
 categories:
     - php
+    - dev
 tags:
-    - development
     
 
 ---

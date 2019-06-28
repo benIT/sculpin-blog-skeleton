@@ -3,8 +3,8 @@ title: Create a debian live usb drive
 categories:
     - system
     - linux
-tags:
     - debian
+tags:
 
 ---
 

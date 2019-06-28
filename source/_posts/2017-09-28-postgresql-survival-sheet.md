@@ -3,6 +3,7 @@ title: PostgreSQL survival sheet
 categories:
     - database
     - pgsql
+    - survival sheet
 tags:
 
 ---
@@ -92,6 +93,7 @@ output:
 ## List DB tables
 
 ### Switch database    
+
     postgres=# \c videoapp
 
 output:

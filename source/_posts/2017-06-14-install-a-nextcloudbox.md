@@ -3,9 +3,9 @@ title: Install a nextcloud box with NextCloudPi
 categories:
     - system
     - linux
-tags:
-    - debian
     - raspberry
+    - debian
+tags:
 
 ---
 Here is exposed steps to setup a nextcloud box on RPI [consuming the nextCloudPi image](https://ownyourbits.com/2017/02/13/nextcloud-ready-raspberry-pi-image/) . enjoy ;)

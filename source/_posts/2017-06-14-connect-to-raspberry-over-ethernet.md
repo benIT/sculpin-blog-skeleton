@@ -3,9 +3,9 @@ title: Connect to raspberry pi from linux host using a simple ethernet cable
 categories:
     - system
     - linux
-tags:
-    - debian
     - raspberry
+    - debian
+tags:
 
 ---
 This post describes how to connect a RPI to a linux station with a simple ethernet cable.
