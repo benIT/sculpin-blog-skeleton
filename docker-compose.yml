@@ -8,3 +8,7 @@ services:
     volumes:
       - ./:/github-blog/
     working_dir: /github-blog/
+    environment:
+      - http_proxy
+      - https_proxy
+      - no_proxy
