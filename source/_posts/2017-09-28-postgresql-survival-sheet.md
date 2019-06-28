@@ -81,6 +81,8 @@ output:
 ## Create user
 
     postgres=# CREATE USER videoapp WITH PASSWORD 'videoapp' CREATEDB ;
+
+Note : This user has privilege to create a db.    
     
 output: 
     
@@ -89,7 +91,7 @@ output:
 
 ## List DB tables
 
-### Switch user    
+### Switch database    
     postgres=# \c videoapp
 
 output:
@@ -110,6 +112,21 @@ output:
      public | video       | table | videoapp | 8192 bytes | 
      public | videos_tags | table | videoapp | 0 bytes    | 
     (4 rows)
+
+## Privileges
+
+### Connect as `postgres` superuser
+
+    PGPASSWORD="P@ss0rd" psql -U postgres -h 10.11.12.13 -p 5432
+
+### Grant Privileges
+
+    GRANT CONNECT ON DATABASE app_database TO app_user;
+    \c app_database
+    GRANT USAGE ON SCHEMA public TO app_user;
+    GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO app_user;
+    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app_user;
+
 ## Config files
 
 ## Determine which config file is in use
