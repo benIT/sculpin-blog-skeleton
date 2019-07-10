@@ -7,16 +7,41 @@ tags:
 
 ---
 
-In this post, the most common Apache2 commands that I use are listed. This is not really interesting but I'm bored of asking google for it every week!
+## Virtual hosts
+
+Virtual hosts allow to run several sites on the same server. 
+
+### Several sites on the same machine
+
+Make use of the `ServerName` directive to match the right site.
+
+In `/etc/apache2/sites-enabled/foo.conf`:
+
+        <VirtualHost *:80> 
+                ServerName foo.local
+                ServerAdmin webmaster@localhost
+                DocumentRoot /home/pi/projects/foo/
+                ErrorLog /foo.log
+                CustomLog /access-foo.log combined
+        </VirtualHost>
 
 
-## Virtual host
+In `/etc/apache2/sites-enabled/bar.conf`:
 
-##Enable a vhost
+        <VirtualHost *:80> 
+                ServerName bar.local
+                ServerAdmin webmaster@localhost
+                DocumentRoot /home/pi/projects/bar/
+                ErrorLog /bar.log
+                CustomLog /access-bar.log combined
+        </VirtualHost> 
+        
+When an http request corresponding to the `ServerName` value is received, the right answer is served according to the vhost.conf.       
+### Enable a vhost
 
     a2ensite video-app
     
-##Disable  a vhost
+### Disable  a vhost
 
     a2dissite video-app
         
@@ -31,10 +56,25 @@ In this post, the most common Apache2 commands that I use are listed. This is no
     sudo a2enmod rewrite
     
 ## Server status
+
     apache2ctl status
  
+## Security
  
-## Securing a vhost with a basic authentication
+###  Hide server version
+
+In `/etc/apache2/conf-available/security.conf`:
+
+    ServerTokens Prod
+    ServerSignature Off
+
+### Prevent site encapsulation in an external iframe
+
+In `/etc/apache2/conf-available/security.conf`:
+    
+    Leader set X-Frame-Options: "sameorigin" 
+ 
+### Secure a vhost with a basic authentication
 
 install utils:
 
