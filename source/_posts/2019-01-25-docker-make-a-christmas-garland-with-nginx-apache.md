@@ -21,7 +21,7 @@ We will be using :
 
 # Demo
 
-[A video is available here.](/video/docker-christmas-garland-demo.mp4)
+<center><video width="640" height="480" controls src="https://benit.github.io/docker-nginx-reverse-proxy/demo.mp4"></video></center>
 
 If it does not work, download it from github repo:
 
