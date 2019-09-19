@@ -70,8 +70,8 @@ Checkout in `/etc/php/7.1/fpm/pool.d/www.conf` the directive that contains the s
 
 Edit `/etc/hosts`:
 
-    10.11.12.13 php56.test.mi
-    10.11.12.13 php71.test.mi
+    10.11.12.13 php56.test
+    10.11.12.13 php71.test
     
 #### PHP 5.6 virtual host
 
