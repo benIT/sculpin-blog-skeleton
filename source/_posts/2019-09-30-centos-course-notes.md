@@ -388,18 +388,19 @@ vim /etc/fstab
 
 ## change root password
 
-    Au démarrage de la machine, interrrompre le décompte en pressant n'importe quelle touche
-    Avec le curseur sélectionnez la ligne de boot
-    Frappez "e" pour editer l'entrée
-    Positionnez-vous sur la ligne commençant par"linux16"
-    Déplacez-vous en fin de ligne et ajoutez : rd.break
-    Frappez Ctrl x pour booter le système avec la configuration modifiée
-    Lorsque l'invite "switch_root:/#" apparait, passer les commandes suivantes:
-    switch_root:/# mount –oremount,rw /sysroot
-    switch_root:/# chroot /sysroot
-    Changer le mot de passe de root:
-    # echo newmdp | passwd - -stdin root
-    ou # passwd root
-    La modification du fichier /etc/shadow en dehors du contexte SELinux nécessite un réétiquetage complet du système au prochain reboot. Pour cela, saisir la commande suivante : # touch /.autorelabel
-    Frappez deux fois la commande "exit", une première fois pour quitter le chroot et une deuxième pour relancer le système.
-    Au reboot de la machine, le nouveau mot de passe est opérationnel.
+    When starting the machine, interrupt the countdown by pressing any key
+    With the cursor on the start line
+    Hit "e" to edit the entry
+    Position on the line <br> by "linux16"
+    Move to the end of the line and add: rd.break
+    Hit Ctrl x to start the system with the modified configuration
+    When the "switch_root: / #" prompt appears, issue the following commands:
+    switch_root: / # mount -oremount, rw / sysroot
+    switch_root: / # chroot / sysroot
+    
+    Change the root password:
+    # echo newmdp | passwd - root -stdin
+    or # passwd root
+    Editing the / etc / shadow file in out of context SELinux requires a full reboot of the system at the next reboot. To do this, enter the following command: # touch /.autorelabel
+    Hit the "exit" command twice, once to exit the chroot and a second time to the system.
+    When restarting the machine, the new operational password.
