@@ -398,3 +398,45 @@ Take a look at the following interactive output that creates:
 
 todo : see GNU parted that is a most advanced partition editor 
 
+
+##  File System types
+
+### Linux FS
+
+* ext
+* ext2: no journal: for small spaces
+* ext3: journal
+* ext4: last version of ext FS
+* reiserfs
+* jfs
+* xfs
+
+### FS from others OS
+
+* FAT: legacy from dos/windows 95. file size limited to 4GO. works well with linux, mac, windws
+* NTFS: from windows 2000
+* HFS: hierarchical FS
+
+## Formatting
+
+BE CAREFUL: FORMATTING WILL ERASE ALL EXISTING DATA!
+
+formatting means create a FS.
+
+
+    mkfs.ext4 /dev/sdb1
+    mkfs -t ext4 /dev/sdb1
+
+
+check a disk with mkfs, looks for bad element meaning the diskend of life:
+    
+    mkfs -t ext4 -c /dev/sdb1
+
+-m: % reserved space to prevent user to fullfill disk.
+
+
+### SWAP partitioning
+
+    mkswap /dev/sdbX #format
+    swapon /dev/sdbX #tell sustem to use it as swap
+
