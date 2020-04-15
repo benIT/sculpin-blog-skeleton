@@ -605,7 +605,8 @@ on some device to the big file tree.
      ls /mnt/test/
 
 
-mount -a: mount all FS /etc/fstab 
+    mount -a: mount all FS /etc/fstab 
+
 * -r: ro
 * -t ext4: specify FS ext type
 * -L alabel: mount the FS matching the given label
@@ -651,6 +652,22 @@ remount it in RW mode (without unmount!):
 
 * -a: all
 * -f: forcee
-* -r: iff fails, remount in ro
+* -r: if fails, remount in ro
+
+------------------------------------------
+
+### fstab
+
+/etc/fstab is used to automount FS
 
 
+
+
+## FS Summary
+
+* partitioning a disk means divide it into several spaces: see `fdisk` or `parted` 
+* formatting means creating a FS on partition: see `mkfs`
+* FS can  be analysed with `dumpe2fs`, tuned with `tune2fs` 
+* FS can  be checked with `fsck` 
+* mount means attaching a device in a particular folder of the linux tree: see `mount`
+* FS mount can be automated with `/etc/fstab` file
