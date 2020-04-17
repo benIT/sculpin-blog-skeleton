@@ -1,5 +1,5 @@
 ---
-title: linux basics: material
+title: linux basics: material - Create a fake hard drive with `dd` and `losetup` - 4/10
 categories:
     - linux
     - linux basics
@@ -7,123 +7,20 @@ tags:
 
 ---
 
-## Linux material command
-
-free: for memory information
-uname: material information
-
-see dedicated virtual FS such as : /dev, /proc...
-
-## Special pseudo drives 
-
-/dev/null: black hole
-/dev/zero: returns zeros
-/dev/full: emulate a full  hard drive
-
-
----------------------------------------
-## About linux kernel
-
-The kernel gives a material abstraction layer to software layer. 
-
-## About linux kernel modules
-
-The linux kernel is monolithic but some modules can be loaded/unloaded such as driver
-
-
-lsmod : list kernel modules
-modprobe: load/unload/manage kernel modules
-
-
-------------------------------------
-## Linux hard drives naming
-
-* floppy: /dev/fd
-* fake hd: /dev/loop
-* CD,DVD: /dev/sr
-* IDE: /dev/hdX
-* SATA: same as SCSI
-* SCSI: /dev/sdX
-
-## Partionning
-
-partition table in MDR format
-MBR: 4 partitions MAX
-MBR contains partition table 
-
-Extended partitions in EBR
-
-
----------------------------------
-
-## FHS: Filesystem Hierarchy Standard
-
-### Programs folder
-
-* /bin: exec for all users
-* /sbin: exec for admins only
-* /lib: lib for programs
-
-### System folders
-
-* /boot: for system boot
-* /usr: for all non essential files to system running. example: GUI
-* /usr/local: folder that is not impacted when system upgrades. Used to store manually compiled programs
-* /opt: optional programs installed by packages
-* /etc: editable text configuration. Configuration files
-* /srv: should contain services data. not respected
-
-### users data folder
-
-* /home/XXX: data for user XXX
-* /root: home for root user
-
-### Variable data
-
-* /var: for logs, mail
-* /tmp: temp files
-
-### Mount folders
-
-* /mnt : for mounting tempo FS. Example: /mnt/data, /mnt/samba
-* /media: mount folder for removable media: USB stick...
-
-#### Virtual FS
-
-* /dev
-* /proc
-
----------------------------------
-## Create a hard drive with dd command
-
-### dd command
-
-utility to copy files/partition
-create a file nammed `my-hd-file`
-  
-  dd if=/dev/zero of=my-hd-file bs=1024 count=10
-
-### Loop device 
-
-In Unix-like operating systems, a loop device, vnd (vnode disk), or lofi (loop file interface) is a pseudo-device that makes a file accessible as a block device.
-
-use `losetup -f` to identify next available loop device number  => `/dev/loop0`
-`losetup -a`: list all loop devices
-
-  losetup /dev/loop0 my-hd-file
-
-
-  
-  -------------------------------------------------------------
-  
-  ## Steps to create a partition 
+ 
 
 * create a file of the partition size with `dd` command
 * associate it to a loop device with `losetup` command
 * partition it with `fdisk`
 
-Create a 100Mo file filed with 0 from /dev/zero
+### dd command
 
+utility to copy files/partition
+create a file named `my-hd-file`
+  
+Create a 100Mo file filed with 0 from /dev/zero: 
+    
+    touch my-hd-file
 	dd if=/dev/zero of=my-hd-file bs=1024000 count=1
 	1+0 records in
 	1+0 records out
@@ -132,6 +29,13 @@ Create a 100Mo file filed with 0 from /dev/zero
 	100+0 records in
 	100+0 records out
 	102400000 bytes (102 MB, 98 MiB) copied, 0.749057 s, 137 MB/s
+
+### Loop device 
+
+In Unix-like operating systems, a loop device, vnd (vnode disk), or lofi (loop file interface) is a pseudo-device that makes a file accessible as a block device.
+
+* `losetup -f` to identify next available loop device number  => `/dev/loop0`
+* `losetup -a`: list all loop devices
 
 
 	root@raspbeeerry:~# losetup -a
@@ -147,8 +51,8 @@ Create a 100Mo file filed with 0 from /dev/zero
 
 about partitions: 
 
-Primary partition are limited to 4.
-Extended partitions are container for logical partitions.
+* Primary partition are limited to 4.
+* Extended partitions are container for logical partitions.
 
 fdisk "fixed disk" is the traditional linux partioning utility.
 Take a look at the following interactive output that creates:
@@ -157,53 +61,53 @@ Take a look at the following interactive output that creates:
 * loop0p3  primary EXTENDED partition with all remaining space
 * loop0p5  primary partition of 20M
 
-	root@raspbeeerry:~# fdisk /dev/loop0 
 
-	Welcome to fdisk (util-linux 2.29.2).
-	Changes will remain in memory only, until you decide to write them.
-	Be careful before using the write command.
+    root@raspbeeerry:~# fdisk /dev/loop0 
 
-	Device does not contain a recognized partition table.
-	Created a new DOS disklabel with disk identifier 0xd1d1a072.
-
-	Command (m for help): m
-
-	Help:
-
-	  DOS (MBR)
-	   a   toggle a bootable flag
-	   b   edit nested BSD disklabel
-	   c   toggle the dos compatibility flag
-
-	  Generic
-	   d   delete a partition
-	   F   list free unpartitioned space
-	   l   list known partition types
-	   n   add a new partition
-	   p   print the partition table
-	   t   change a partition type
-	   v   verify the partition table
-	   i   print information about a partition
-
-	  Misc
-	   m   print this menu
-	   u   change display/entry units
-	   x   extra functionality (experts only)
-
-	  Script
-	   I   load disk layout from sfdisk script file
-	   O   dump disk layout to sfdisk script file
-
-	  Save & Exit
-	   w   write table to disk and exit
-	   q   quit without saving changes
-
-	  Create a new label
-	   g   create a new empty GPT partition table
-	   G   create a new empty SGI (IRIX) partition table
-	   o   create a new empty DOS partition table
-	   s   create a new empty Sun partition table
-
+    Welcome to fdisk (util-linux 2.29.2).
+    Changes will remain in memory only, until you decide to write them.
+    Be careful before using the write command.
+    
+    Device does not contain a recognized partition table.
+    Created a new DOS disklabel with disk identifier 0xd1d1a072.
+    
+    Command (m for help): m
+    
+    Help:
+    
+    DOS (MBR)
+    a   toggle a bootable flag
+    b   edit nested BSD disklabel
+    c   toggle the dos compatibility flag
+    
+    Generic
+    d   delete a partition
+    F   list free unpartitioned space
+    l   list known partition types
+    n   add a new partition
+    p   print the partition table
+    t   change a partition type
+    v   verify the partition table
+    i   print information about a partition
+    
+    Misc
+    m   print this menu
+    u   change display/entry units
+    x   extra functionality (experts only)
+    
+    Script
+    I   load disk layout from sfdisk script file
+    O   dump disk layout to sfdisk script file
+    
+    Save & Exit
+    w   write table to disk and exit
+    q   quit without saving changes
+    
+    Create a new label
+    g   create a new empty GPT partition table
+    G   create a new empty SGI (IRIX) partition table
+    o   create a new empty DOS partition table
+    s   create a new empty Sun partition table
 
 	Command (m for help): p
 	Disk /dev/loop0: 97.7 MiB, 102400000 bytes, 200000 sectors
@@ -445,7 +349,7 @@ check a disk with mkfs, looks for bad element meaning the diskend of life:
 
 ## FS tools
 
-### dumps FS informations: dump2fs
+### dumps FS informations: dumpe2fs
 
 inode: means a file
 

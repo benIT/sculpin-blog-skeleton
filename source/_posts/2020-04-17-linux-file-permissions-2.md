@@ -1,5 +1,5 @@
 ---
-title: linux basics: files 
+title: linux basics: file permissions - advanced 2/2 
 categories:
     - linux
     - linux basics
@@ -7,65 +7,24 @@ tags:
 
 ---
 
-## file ownership
+##  SUID: Set-user Identification permission
 
-File ownership is managed by a user owner and a group owner.
-See `ls -l` or `ls -n`
-
-Examples: 
-    
-    chown user:group file #change owner and group
-    chown user file # change only owner
-    chown :group file #change only group, same as chgrp command
-
-## Linux POSIX rights
-
-POSIX is a standard.
-
-## List rights
-
-    ls -l
-
-Type code:
-
-* -: file
-* d: folder
-* l: symlink
-* p: pipe. used to make 2 programs communicate
-* s: socket. used to make 2 programs communicate + network management + bidirectional
-* b: block device, ie write block by block
-* c: character device, ie write char by char
-
-9 bits: 3 User + 3 Group + 3 Other
-
-## chmod
-
-
-* u: for user
-* g: for group
-* o: for others
-* a: for all
-
-* +: add right
-* -: remove right
-* =: set right
-
-
-* r: read. 2^2 => 4
-* w: write.2^1 => 2
-* x: execute.2^0 => 1
-
-    
-    chmod u+r,g-r file.txt
-    chmod a=rwx file.txt
-    chmod 740 file.txt
-
-
-## Special rights
-
-###  SUID: specfic to executable file. When runned by a user, will be runned with file owner rights
+usage:
 
     chmod u+s prg.sh
+    chmod 4[rwx][rwx][rwx] prg.sh
+    
+Specfic to executable file. 
+
+When a command or script with SUID bit set is run, its effective UID becomes that of the owner of the file, rather than of the user who is running it.
+
+The setuid permission displayed as an “s” in the owner’s execute field.
+
+[see this ressource](https://www.thegeekdiary.com/what-is-suid-sgid-and-sticky-bit/): 
+When a command or script with SUID bit set is run, its effective UID becomes that of the owner of the file, rather than of the user who is running it.
+    
+    chmod u+s prg.sh
+    chmod 4[rwx][rwx][rwx] prg.sh
 
 create a file:
 
@@ -73,13 +32,13 @@ create a file:
     root@raspbeeerry:/home/pi# ls -l prg.sh 
     -rw-r--r-- 1 root root 0 Apr 16 15:06 prg.sh
 
-add execution right for all, note the lower 's' when X right:
+add execution right for all:
 
     root@raspbeeerry:/home/pi# chmod a+x prg.sh 
     root@raspbeeerry:/home/pi# ls -l prg.sh 
     -rwxr-xr-x 1 root root 0 Apr 16 15:06 prg.sh
 
-set SUID: 
+set SUID, note the lower 's' when X right: 
 
     root@raspbeeerry:/home/pi# chmod u+s prg.sh 
     root@raspbeeerry:/home/pi# ls -l prg.sh 
@@ -92,24 +51,37 @@ remove execution right for all, note the upper 'S' when no X right:
     -rwSr--r-- 1 root root 0 Apr 16 15:06 prg.sh
 
 
-### SGID: same for group
+## SGID: Set-group identification permission
+
+usage:
 
     chmod g+s prg.sh
+    chmod 2[rwx][rwx][rwx] prg.sh
 
-### Rights on folder
+[see this ressource](https://www.thegeekdiary.com/what-is-suid-sgid-and-sticky-bit/): 
+When SGID permission is set on a directory, files created in the directory belong to the group of which the directory is a member.
+– For example if a user having write permission in the directory creates a file there, that file is a member of the same group as the directory and not the user’s group.
+– This is very useful in creating shared directories.
+– The setgid permission displays as an “s” in the group’s execute field.
+
+## Rights on folder
 
 *r: allow to list
 *w: allow to create/delete files
 *x: allow to traverse
 
-### Sticky bit
+## Sticky bit permission
 
-* withouy the sticky bit : user can create/delete files
-* with the sticky bit : user with Write permission on a folder are allowed to create new files but not to delete files
-
+usage:
 
     chmod +t folder
-    chmod -t folder
+    chmod 1[rwx][rwx][rwx] prg.sh
+
+[see this ressource](https://www.thegeekdiary.com/what-is-suid-sgid-and-sticky-bit/): 
+The sticky bit is primarily used on shared directories.
+* without the sticky bit : user with Write permission on a folder can create/delete other users files
+* with the sticky bit : user with Write permission on a folder are allowed to create new files but not to delete files
+
 
 
 Example:
@@ -146,16 +118,3 @@ as another user, retry to delete file created by another user:
     @raspbeeerry ~ $ ls -l test-folder/
     total 0
     -rw-r--r-- 1 pi pi 0 Apr 16 14:59 b
-
-
-
-octal notation:
-
-basic rights:
-
-    rwx rwx rwx
-
-special rights:
-
-    sst rwx rwx rwx
-
