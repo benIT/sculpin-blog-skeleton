@@ -1,5 +1,5 @@
 ---
-title: linux basics: file permissions - basic -1/2 
+title: linux basics: file permissions - POSIX rights - 1 
 categories:
     - linux
     - linux basics
