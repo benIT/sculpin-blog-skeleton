@@ -82,7 +82,7 @@ It is possible to edit POSIX rights without specifying user or group:
     mask::rwx
     other::r--
 
-same for group: 
+same for user: 
 
     setfacl -m u::r test
     getfacl test
@@ -180,3 +180,39 @@ check: `getfacl test-folder/`
     other::r-x
 
 #### Delete a particular ACL with `-x`
+
+    setfacl -x u:testuser test
+    
+## Mask
+    
+A mask is a logical AND operator. The effective rights will result of the logical AND operation of the right mask and the user or group ACL. Check the `#effective:` in `getfacl` output:
+
+Let a `rwx` ACL to `testuser`: 
+
+    setfacl -m u:testuser:rwx test
+
+Let a `rw` mask ACL:
+
+    setfacl -m m::rw test
+
+Check rights:
+    
+     getfacl test
+    # file: test
+    # owner: root
+    # group: root
+    user::r--
+    user:testuser:rwx               #effective:rw-
+    group::r--
+    mask::rw-
+    other::r--
+
+For testuser: 
+
+    user:testuser:rwx               #effective:rw
+
+The effective rights are the result of the logical AND operation, thus `rw`
+
+## ACL hierarchy
+
+mask > user ACL > group ACL > owner group ACL > POSIX rights
