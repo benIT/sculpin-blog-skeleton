@@ -1,5 +1,5 @@
 ---
-title: linux basics: material - command & kernel - 1/10
+title: linux basics: material 1 - command & kernel
 categories:
     - linux
     - linux basics

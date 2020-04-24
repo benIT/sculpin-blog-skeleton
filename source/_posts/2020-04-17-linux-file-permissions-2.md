@@ -1,5 +1,5 @@
 ---
-title: linux basics: file permissions - advanced 2
+title: linux basics: file permissions 2 - advanced
 categories:
     - linux
     - linux basics

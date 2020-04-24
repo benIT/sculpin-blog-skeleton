@@ -1,5 +1,5 @@
 ---
-title: linux basics: material - formatting - 7/10
+title: linux basics: material 7 - formatting
 categories:
     - linux
     - linux basics

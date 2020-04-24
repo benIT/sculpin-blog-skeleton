@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    image: benit/debian-web
+    image: benit/buster-php-7.3 
     container_name: github-blog
     ports:
       - 8000:8000

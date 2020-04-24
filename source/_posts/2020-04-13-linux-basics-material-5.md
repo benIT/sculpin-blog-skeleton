@@ -1,5 +1,5 @@
 ---
-title: linux basics: material -  File System types - 5/10
+title: linux basics: material 5 -  File System types
 categories:
     - linux
     - linux basics

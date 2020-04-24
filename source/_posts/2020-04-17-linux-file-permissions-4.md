@@ -1,5 +1,5 @@
 ---
-title: linux basics: file permissions - umask - 4 
+title: linux basics: file permissions 4 - umask
 categories:
     - linux
     - linux basics

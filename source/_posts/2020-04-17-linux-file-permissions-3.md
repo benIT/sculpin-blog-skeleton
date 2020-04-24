@@ -1,5 +1,5 @@
 ---
-title: linux basics: file permissions - ACL - 3 
+title: linux basics: file permissions 3 - ACL
 categories:
     - linux
     - linux basics

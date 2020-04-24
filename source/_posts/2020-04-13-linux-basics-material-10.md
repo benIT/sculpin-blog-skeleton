@@ -1,5 +1,5 @@
 ---
-title: linux basics: material -  File System Summary - 10/10
+title: linux basics: material 10 -  File System Summary
 categories:
     - linux
     - linux basics

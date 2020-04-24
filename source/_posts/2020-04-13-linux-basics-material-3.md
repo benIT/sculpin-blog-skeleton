@@ -1,5 +1,5 @@
 ---
-title: linux basics: material - FHS: Filesystem Hierarchy Standard - 3/10
+title: linux basics: material 3 - FHS: Filesystem Hierarchy Standard
 categories:
     - linux
     - linux basics

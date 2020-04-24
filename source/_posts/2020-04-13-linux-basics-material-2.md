@@ -1,5 +1,5 @@
 ---
-title: linux basics: material - Linux hard drives naming - 2/10
+title: linux basics: material 2 - Linux hard drives naming
 categories:
     - linux
     - linux basics

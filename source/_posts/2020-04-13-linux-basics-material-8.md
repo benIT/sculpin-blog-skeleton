@@ -1,5 +1,5 @@
 ---
-title: linux basics: material - FS tools - 8/10
+title: linux basics: material 8 - FS tools
 categories:
     - linux
     - linux basics
