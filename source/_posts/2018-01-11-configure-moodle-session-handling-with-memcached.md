@@ -11,7 +11,7 @@ This procedure has been tested on Moodle [version 3.0.6+](https://github.com/moo
 
 ## Set up a  memcached server
 
-see [this post](/blog2018-01-11-php7-nginx-memcached-session).
+see [this post](/blog/2018-01-11-php7-nginx-memcached-session).
 
 ## Configure moodle
 

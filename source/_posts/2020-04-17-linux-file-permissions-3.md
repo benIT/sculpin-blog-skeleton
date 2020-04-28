@@ -124,6 +124,9 @@ check child file inherits ACL from parent folder:
     
     touch test-folder/a
     getfacl test-folder/a
+    
+=>
+    
     # file: test-folder/a
     # owner: root
     # group: root
@@ -137,7 +140,6 @@ check child file inherits ACL from parent folder:
 Recursive mode is not linked to file.
 
 ### Delete ACL
-
 
 #### Delete all ACLs
 

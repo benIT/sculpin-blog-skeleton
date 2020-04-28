@@ -1,7 +1,7 @@
 ---
 title: Installing Nextcloud on RPI device
 categories:
-    - RPI
+    - rpi
     - privacy
     - security
 tags:
