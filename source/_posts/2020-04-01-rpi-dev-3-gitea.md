@@ -1,5 +1,5 @@
 ---
-title: rpi dev 2 - Install GITEA
+title: rpi dev 3 - Install GITEA
 categories:
     - linux
     - rpi
@@ -7,6 +7,55 @@ categories:
 tags:
 
 ---
+## GIT itself
+
+    apt-get install git
+    adduser --disabled-login --gecos 'Gitea' git
+    
+### GITEA app
+
+    cd /mnt/gitea/
+    wget https://dl.gitea.io/gitea/1.4.0/gitea-1.4.0-linux-arm-7 -O gitea
+    chmod +x gitea
+    chown -R git: /mnt/gitea
+    
+check its running at https://192.X.X.X:3000 with : `./gitea web` 
+
+#### GITEA systemd service
+
+In `/etc/systemd/system/gitea.service`: 
+
+    [Unit]
+    Description=Gitea (Git with a cup of tea)
+    After=syslog.target
+    After=network.target
+    
+    [Service]
+    # Modify these two values ​​and uncomment them if you have
+    # repos with lots of files and get to HTTP error 500 because of that
+    ###
+    # LimitMEMLOCK=infinity
+    # LimitNOFILE=65535
+    RestartSec=2s
+    Type=simple
+    User=git
+    Group=git
+    WorkingDirectory=/mnt/gitea
+    ExecStart=/mnt/gitea/gitea web
+    Restart=always
+    Environment=USER=git 
+    HOME=/mnt/gitea/gitea
+    
+    [Install]
+    WantedBy=multi-user.target
+
+enable service:
+
+    systemctl enable gitea.service
+    systemctl start gitea.service
+    
+reboot and check service is running.
+
 ### Apache2
 
     apt-get install -y apache2
@@ -22,10 +71,7 @@ tags:
     GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO gitea_user;
     GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO gitea_user;
     
-### GITEA app
 
-    apt-get install git
-    adduser --disabled-login --gecos 'Gitea' git
 
 ### Setup Apache2 reverse proxy
 
@@ -59,6 +105,7 @@ Configure reverse proxy directives [source](https://www.digitalocean.com/communi
 		SSLengine on
 		SSLCertificateKeyFile /etc/letsencrypt/live/mygitea.com/privkey.pem
 		SSLCertificateFile    /etc/letsencrypt/live/mygitea.com/cert.pem
+		SSLCertificateChainFile /etc/letsencrypt/live/mygitea.com/fullchain.pem
 
 		ErrorLog ${APACHE_LOG_DIR}/gitea-error.log
 		CustomLog ${APACHE_LOG_DIR}/gitea-access.log combined
@@ -68,5 +115,11 @@ Configure reverse proxy directives [source](https://www.digitalocean.com/communi
 	
 ### Configuration
 
+### from GUI
+
 * disable registration form
 * mark repo as private
+
+### from CLI
+
+edit `custom/conf/app.ini` and `systemctl restart gitea.service`

@@ -1,5 +1,5 @@
 ---
-title: rpi dev 3 - get let's encrypt certificates with certbot
+title: rpi dev 4 - get let's encrypt certificates with certbot
 categories:
     - linux
     - rpi
@@ -13,7 +13,7 @@ tags:
     apt-get install -y certbot python-certbot-apache
 
     certbot certonly --webroot --webroot-path /var/www/html --domain mydomain.com --email me@mail.com
-
+    
 ### Renewal
 
     certbot renew --dry-run

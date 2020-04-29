@@ -1,5 +1,5 @@
 ---
-title: rpi dev 6 - System logs
+title: rpi dev 7 - System logs
 categories:
     - linux
     - security

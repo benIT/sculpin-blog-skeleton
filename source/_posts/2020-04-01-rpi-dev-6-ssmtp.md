@@ -1,5 +1,5 @@
 ---
-title: rpi dev 5 - setup ssmpt with netcourrier
+title: rpi dev 6 - setup ssmpt with netcourrier
 categories:
     - linux
     - rpi

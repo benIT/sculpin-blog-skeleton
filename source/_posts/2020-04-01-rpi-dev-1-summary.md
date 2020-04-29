@@ -18,8 +18,9 @@ tags:
 * buy a domain name from a registrar
 * edit your DNS zone from your registrar to add `A record` that will link your domain name and your router public @IP
 * edit your router DMZ section to redirect incoming traffic to your device, here the RPI. You can make use of NAT rules too and port redirections
-* [install a GITHUB like app, gitea](/blog/2020/04/01/rpi-dev-gitea) 
-* [get SSL certificates from let's encrypt](/blog/2020/04/01/rpi-dev-lets-encrypt-certificates)
-* [secure it with firewall rules](/blog/2020/04/01/rpi-dev-ufw)
-* [setup smtp](/blog/2020/04/01/rpi-dev-ssmtp)
-* [check logs](/blog/2020/04/01/rpi-dev-system-logs)
+* [extend RPI File system](/blog/2020/04/01/rpi-dev-2-extend-fs) 
+* [install a GITHUB like app, gitea](/blog/2020/04/01/rpi-dev-3-gitea) 
+* [get SSL certificates from let's encrypt](/blog/2020/04/01/rpi-dev-4-lets-encrypt-certificates)
+* [secure it with firewall rules](/blog/2020/04/01/rpi-dev-5-ufw)
+* [setup smtp](/blog/2020/04/01/rpi-dev-6-ssmtp)
+* [check logs](/blog/2020/04/01/rpi-dev-7-system-logs)
